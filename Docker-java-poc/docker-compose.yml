@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql-server:
+   image: 'mysql:5.7'
+   environment:
+    - MYSQL_ROOT_PASSWORD=rootpasswordgiven
+    - MYSQL_DATABASE=employee_kubernates
+    - MYSQL_USER=root
+    - MYSQL_PASSWORD=rootpasswordgiven
+  spring-app:
+    restart: always
+    build: .
+    ports:
+      - "8085:8080"
+    
